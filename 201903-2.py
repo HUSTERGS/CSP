@@ -1,3 +1,4 @@
+# score 100
 import sys
 
 input_count = int(sys.stdin.readline())

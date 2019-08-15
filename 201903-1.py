@@ -1,3 +1,5 @@
+# score 100
+
 import sys
 
 # 数字的个数

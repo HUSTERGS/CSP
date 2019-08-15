@@ -1,3 +1,5 @@
+# score 60
+
 from sys import stdin
 from collections import deque
 

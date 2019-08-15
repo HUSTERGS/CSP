@@ -1,3 +1,5 @@
+# score 20
+
 import sys
 
 def convert(q, s, n):
