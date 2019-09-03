@@ -1,51 +1,41 @@
-# score 60
+# score 80
 
 from sys import stdin
-from collections import deque
+# from collections import deque
+T, n = [int(x) for x in stdin.readline().split()]
 
-T, n = stdin.readline().split()
-T = int(T)
-n = int(n)
-processes = {}
-for count in range(T):
+for i in range(T):
+    processes = []
+    success = True
+    # 读取每一组数据
     for i in range(n):
-        processes[i] = deque([(x[0], int(x[1])) for x in stdin.readline().split()])
-        # processes[i].reverse()
-    # print('processes: ', processes)
-    flag = 1
-    deadlock = 0
-    while flag and not deadlock:
-        flag = 0
+        # processes.append(deque([x for x in stdin.readline().split()]))
+        processes.append([x for x in stdin.readline().split()])
+    while success:
+        success = False
         for i in range(n):
-            # 遍历每一个进程的指令列表
-            # print(processes, end='\n\n\n')
+            # 对于每一个进程
             if len(processes[i]):
-                # 第i个进程的指令列表如果不是空的
-                # 找到第一个指令的指令类型以及目标
-                processType, target = processes[i][0]
-                if not len(processes[target]):
-                    # 如果对方的列表已经空了，说明已经产生了死锁
-                    deadlock = 1
+                target = int(processes[i][0][1:])
+                # 目标进程的序号
+                if len(processes[target]) == 0:
+                    # 如果目标进城已经是空的，那么必然是死锁，不用继续了
+                    success = False
                     break
-                else:
-                    if processType == 'R' and processes[target][0][0] == 'S' and processes[target][0][1] == i:
-                        # 如果目标进程也匹配的话，就pop
-                        processes[i].popleft()
-                        processes[target].popleft()
-                        flag = 1
-                    elif processType == 'S' and processes[target][0][0] == 'R' and processes[target][0][1] == i:
-                        # 如果目标进程也匹配的话，就pop
-                        processes[i].popleft()
-                        processes[target].popleft()
-                        flag = 1
-    # 此时已经没有更多的指令可以消去或者发现了死锁
-    if deadlock:
-        print(1)
-        continue
-    if sum([len(x) for x in processes.values()]):
+                if int(processes[target][0][1:]) == i:
+                    if processes[i][0][0] != processes[target][0][0]:
+                        del processes[i][0]
+                        del processes[target][0]
+                        success = True
+                    else:
+                        # 同样是死锁
+                        success = False
+                        break
+    if sum([len(x) for x in processes]):
         print(1)
     else:
         print(0)
+
 
 
 '''
