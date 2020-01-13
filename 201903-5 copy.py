@@ -23,13 +23,13 @@ for i in range (n):
 
 for u in range(n):
     for i in range(n):
-        for j in range(n):
+        for j in [x for x in range(n) if types[x] == 1]:
             if d[i][j] > d[i][u] + d[u][j]:
                 d[i][j] = d[i][u] + d[u][j]
 
 for i in range(n):
     dist_list = [y for x, y in enumerate(d[i]) if types[x] == 1 and d[i][x] != inf]
-    print("dist_list = ", dist_list)
+    # print("dist_list = ", dist_list)
     if len(dist_list) <= k:
         print(sum(dist_list))
     else:
