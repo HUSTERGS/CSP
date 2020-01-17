@@ -1,31 +1,12 @@
 # score 90
 # 使用了各种办法还是无法提高到100，一直超时
 from sys import stdin
-
 from collections import deque
 
 m, n, q = [int(x) for x in stdin.readline().split()]
 canvas = [[".", ] * m for _ in range(n)]
 
 queue = deque()
-
-# def filling(x, y, c):
-#     handled = set()
-#     queue.append((x, y))
-#     while len(queue) != 0:
-#         x, y = queue.popleft()
-#         if 0 <= x < m and 0 <= y < n:
-#             if canvas[y][x] != "-" and canvas[y][x] != "|" and canvas[y][x] != "+":
-#                 canvas[y][x] = c
-#                 handled.add((x, y))
-#                 if (x, y + 1) not in handled:
-#                     queue.append((x, y + 1))
-#                 if (x, y - 1) not in handled:
-#                     queue.append((x, y - 1))
-#                 if (x + 1, y) not in handled:
-#                     queue.append((x + 1, y))
-#                 if (x - 1, y) not in handled:
-#                     queue.append((x - 1, y))
 handled = set()
 
 

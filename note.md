@@ -30,3 +30,5 @@
    还有就是str的replace方法是返回一个新的字符串而不是在原来的值上面直接修改
    
 9. 201512-3 怎么样都到不了100分，但是还是学到了一些东西，如果使用队列的话，请使用`from collections import deque`，虽然有`from queue import Queue`，但是`Queue`的本意是线程之间通信，所以实际山还是`deque`性能更高，`list`就完全不考虑了
+
+10. 正则替换`re.sub`
