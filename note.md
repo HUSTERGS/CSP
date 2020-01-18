@@ -32,3 +32,23 @@
 9. 201512-3 怎么样都到不了100分，但是还是学到了一些东西，如果使用队列的话，请使用`from collections import deque`，虽然有`from queue import Queue`，但是`Queue`的本意是线程之间通信，所以实际山还是`deque`性能更高，`list`就完全不考虑了
 
 10. 正则替换`re.sub`
+
+11. 201703-3 实际上还是有很多问题的
+
+    - 出现没有事先告诉有多少输入的情况
+
+      ```python
+      while True:
+      	line = stdin.readline()
+          if not line:
+              break
+          pass
+      ```
+
+    - 用匹配的字符串进行相关替换,如将`[Text](Link)`替换成`<a href="Link">Text</a>`
+
+      ```python
+      line = re.sub(r"\[(.+?)\]\((.+?)\)", r'<a href="\2">\1</a>', line)
+      ```
+
+      其中`\1`和`\2`分别表示第几个group序号从1开始
