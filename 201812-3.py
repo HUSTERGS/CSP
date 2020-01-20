@@ -6,9 +6,12 @@
 
 from sys import stdin
 from functools import cmp_to_key
+
 n = int(stdin.readline())
+
+
 # n = 2
-def is_legal(ip_string : str):
+def is_legal(ip_string: str):
     pref, length = ip_string.split('/')
     if int(length) > 32 or int(length) < 0:
         return False
@@ -19,8 +22,7 @@ def is_legal(ip_string : str):
         return False
 
 
-
-def regulizeIP(ip_string : str):
+def regulizeIP(ip_string: str):
     if '/' in ip_string:
         # 标准型或者省略后缀型
         pref, length = ip_string.split('/')
@@ -36,7 +38,8 @@ def regulizeIP(ip_string : str):
         length = len(ip_string.split('.'))
         return regulizeIP(ip_string + '/' + str(8 * length))
 
-def compare_func(str1:str, str2:str):
+
+def compare_func(str1: str, str2: str):
     pref1, len1 = str1.split('/')
     pref2, len2 = str2.split('/')
     if pref1 == pref2:
@@ -56,6 +59,7 @@ def compare_func(str1:str, str2:str):
         else:
             # print('test1 < test2')
             return -1
+
 
 def is_subset(a, b):
     pref1, len1 = a.split('/')
@@ -77,8 +81,6 @@ ip_list = sorted([regulizeIP(stdin.readline().strip()) for _ in range(n)], key=c
 # ip_list = ['0.0.0.0/1', '128.0.0.0/1']
 
 
-        
-        
 # def convert(ipAdr):
 #     print(['0' * (8 - len(bin(int(x))[2:])) + bin(int(x))[2:] for x in ipAdr.split('.')])
 
@@ -87,17 +89,14 @@ ip_list = sorted([regulizeIP(stdin.readline().strip()) for _ in range(n)], key=c
 i = 0
 while True:
     try:
-        if is_subset(ip_list[i], ip_list[i+1]):
-            del ip_list[i+1]
+        if is_subset(ip_list[i], ip_list[i + 1]):
+            del ip_list[i + 1]
         else:
             i += 1
     except:
         break
 
-
-
 '''Step3'''
-
 
 
 def step3_func(a, b):
@@ -132,11 +131,11 @@ i = 0
 while True:
     # print("进入", i)
     try:
-        if (step3_func(ip_list[i], ip_list[i+1])):
+        if (step3_func(ip_list[i], ip_list[i + 1])):
             pref, length = ip_list[i].split('/')
             a_plus = pref + '/' + str(int(length) - 1)
             ip_list[i] = a_plus
-            del ip_list[i+1]
+            del ip_list[i + 1]
             if i > 0:
                 i -= 1
             # print("成功")
@@ -146,7 +145,6 @@ while True:
     except:
         break
 
-
 for item in ip_list:
     print(item)
 
@@ -155,4 +153,3 @@ for item in ip_list:
 # test_list = ['101.6.6/23', '101/8', '1/32', '101.6.6.0', '101.6', '1']
 # for i in test_list:
 #     print(regulizeIP(i))
-
