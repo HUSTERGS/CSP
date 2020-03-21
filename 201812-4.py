@@ -1,83 +1,49 @@
-
+# score 60
 from sys import stdin
+import heapq
 from math import inf
-# n, m, root = [int(stdin.readline()) for x in range(3)]
 
-n = 4
-m = 5
-root = 1
-string = '''1 2 3
-1 3 4
-1 4 5
-2 3 8
-3 4 2'''
-class Vertex(object):
+n, m, root = [int(stdin.readline().strip()) for _ in range(3)]
+
+vertex_dict = {}
+
+
+class Vertex:
     def __init__(self, index):
-        self.index = index # 节点序号
-        self.adjList = {} # 相邻节点的List
-        self.level = None
-    def add_adj(self, target, dist):
-        if target not in self.adjList:
-            self.adjList[target] = dist
-        elif self.adjList[target] > dist:
-            self.adjList[target] = dist
-    def __str__(self):
-        print("index = ", self.index)
-        print("adjList = ", self.adjList)
-        print("level = ", self.level, end='\n\n')
-        return ""
-vertexList = [Vertex(0), ] # 多计算一个点
-vertexList.extend([Vertex(i) for i in range(1, n+1)])
+        self.index = index
+        self.adj = {}
+        self.dist = None  # 该点距离生成树的最小距离
+
+    def __lt__(self, other):
+        return self.dist < other.dist
 
 
-remainVertextSet = vertexList[:] # 所有的点
-currentVertexSet = set() # 已经加入的点
+for _ in range(m):
+    v, u, t = [int(x) for x in stdin.readline().strip().split()]
+    # 如果点v,u之前没有出现过就将其加入
+    if v not in vertex_dict:
+        vertex_dict[v] = Vertex(v)
+    if u not in vertex_dict:
+        vertex_dict[u] = Vertex(u)
+    # 添加边
+    vertex_dict[v].adj[u] = t
+    vertex_dict[u].adj[v] = t
 
-min_dist = [inf, ] * (n + 1) # 用于记录最小距离的
-min_dist[root] = 0
-vertexList[root].level = 1
+V = set()
+V_new = []
+vertex_dict[root].dist = -inf
+heapq.heappush(V_new, vertex_dict[root])
+max_dist = -inf
+while len(V_new) != 0:
+    v = heapq.heappop(V_new)
+    V.add(v.index)
+    max_dist = max(max_dist, v.dist)
+    for key, value in v.adj.items():
+        if key not in V:
+            if vertex_dict[key].dist is None:
+                vertex_dict[key].dist = value
+                heapq.heappush(V_new, vertex_dict[key])
+            elif value < vertex_dict[key].dist:
+                vertex_dict[key].dist = value
 
-# 读入数据
-# for i in range(m):
-#     v1, v2, dist = [int(x) for x in stdin.readline().split()]
-#     vertexList[v1].add_adj(v2, dist)
-#     vertexList[v2].add_adj(v1, dist)
-
-for line in string.split("\n"):
-    v1, v2, dist = [int(x) for x in line.split()]
-    vertexList[v1].add_adj(v2, dist)
-    vertexList[v2].add_adj(v1, dist)
-    
-
-while len(remainVertextSet):
-    # 遍历所有剩余的点, 找出距离 root 最短的点
-    min_v = min(remainVertextSet, key=lambda x : min_dist[x.index])
-    # print("min_v = \n", min_v)
-    remainVertextSet.remove(min_v)
-    currentVertexSet.add(min_v.index)
-    # print(min_v.adjList)
-    for target, dist in min_v.adjList.items():
-        if target not in currentVertexSet and min_dist[target] > dist + min_dist[min_v.index]:
-            min_dist[target] = dist + min_dist[min_v.index]
-            vertexList[target].level = min_v.level + 1
-            print("添加了 v = ", target)
-            print(target, " to ", min_v.index , " = ", min_dist[target])
-
-
-print(min_dist)
-print(x.level for x in vertexList)
-
-
-
-
-
-'''
-4
-5
-1
-1 2 3
-1 3 4
-1 4 5
-2 3 8
-3 4 2
-'''
+print(max_dist)

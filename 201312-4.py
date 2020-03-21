@@ -1,3 +1,4 @@
+# score 100
 from sys import stdin
 n = int(stdin.readline())
 max_n = 1001

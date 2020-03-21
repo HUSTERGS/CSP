@@ -4,6 +4,7 @@ from sys import stdin
 
 n, m, k = [int(x) for x in stdin.readline().split()]
 
+
 # class node:
 #     def __init__(self, index, station_type):
 #         self.index = index
@@ -14,11 +15,11 @@ n, m, k = [int(x) for x in stdin.readline().split()]
 #         if target != self.index and target not in self.paths.keys() or self.paths[target] > length:
 #             self.paths[target] = length
 #         return
-    
-    # def __repr__(self):
-    #     return "index = {}, station_type = {}, paths = {}".format(self.index, self.station_type, self.paths)
-    # def __str__(self):
-    #     return "index = {}, station_type = {}, paths = {}".format(self.index, self.station_type, self.paths)
+
+# def __repr__(self):
+#     return "index = {}, station_type = {}, paths = {}".format(self.index, self.station_type, self.paths)
+# def __str__(self):
+#     return "index = {}, station_type = {}, paths = {}".format(self.index, self.station_type, self.paths)
 # node 中存放的点是从1开始的，但是索引node的时候是从0开始的
 #  处理每条边
 
@@ -28,8 +29,9 @@ def add_path(self, target, length):
         self['paths'][target] = length
     return
 
+
 # 读取数据
-nodes = [{'index' : x + 1, 'paths': {x + 1 : 0}, 'station_type' : int(y)} for x, y in enumerate(stdin.readline().split())]
+nodes = [{'index': x + 1, 'paths': {x + 1: 0}, 'station_type': int(y)} for x, y in enumerate(stdin.readline().split())]
 # nodes = [node(x + 1, int(y)) for x ,y in enumerate(stdin.readline().split())]
 for i in range(m):
     source, target, length = [int(x) for x in stdin.readline().split()]
@@ -37,6 +39,8 @@ for i in range(m):
     # nodes[target - 1].add_path(source, length)
     add_path(nodes[source - 1], target, length)
     add_path(nodes[target - 1], source, length)
+
+
 # print(nodes)
 
 
@@ -60,7 +64,6 @@ def find_min(current_path_value, V_set):
         return -1
 
 
-    
 def add_vertex(newNode, current_path_value, V_set):
     V_set.add(newNode['index'])
     # print("加入了: ", newNode.index)
@@ -75,8 +78,9 @@ def add_vertex(newNode, current_path_value, V_set):
             # print(current_path_value)
             # V_set.add(key)
 
+
 def shortest_path(self):
-    current_path_value = [ -1 ] * (n + 1)
+    current_path_value = [-1] * (n + 1)
     current_path_value[self['index']] = 0
     V_set = set()
     # 获取目前最短的路径的点的索引， 从1开始，作为初始点
@@ -91,9 +95,6 @@ def shortest_path(self):
         # print(self.index, ': ')
         # print(current_path_value)
     return current_path_value
-    
-
-
 
 
 for i in range(n):
