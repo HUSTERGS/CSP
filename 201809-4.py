@@ -48,7 +48,7 @@ def determine_i(i):
         for bias in range(3):
             ai = 3 * nums[i-1] - result[i - 1] - result[i - 2] + bias
             result[i] = ai
-            if ai > bound[i]:
+            if ai > bound[i] or ai <= -2:
                 return None
             if 1 <= ai <= bound[i] and determine_i(i + 1) is not None:
                 return result
