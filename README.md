@@ -8,7 +8,7 @@
 | 201909 | :heavy_check_mark:    | :heavy_check_mark:    | 40 :hourglass: | 20 :hourglass: |          |
 | 201903 | :heavy_check_mark:    | :heavy_check_mark:    | 20 :x: | 80 :hourglass: | 0 :hourglass: |
 | 201812 | :heavy_check_mark:    | :heavy_check_mark:    | 80 :hourglass: | 60 :x: |          |
-| 201809 | :heavy_check_mark:    | :heavy_check_mark:    | 90 :x: |           |          |
+| 201809 | :heavy_check_mark:    | :heavy_check_mark:    | 90 :x: | 50 :hourglass: |          |
 | 201803 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       |           |          |
 | 201712 | :heavy_check_mark:    | :heavy_check_mark:    | 10 :hourglass: |           |          |
 | 201709 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       |           | 30 :hourglass: |
