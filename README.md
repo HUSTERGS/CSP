@@ -4,7 +4,7 @@
 
 |        | 第一题 | 第二题 | 第三题    | 第四题    | 第五题   |
 | ------ | ------ | ------ | --------- | --------- | -------- |
-| 201912 | :heavy_check_mark:    | :heavy_check_mark:    | 90 :hourglass: |           |          |
+| 201912 | :heavy_check_mark:    | :heavy_check_mark:    | 90 :hourglass: |           | 20 :hourglass: |
 | 201909 | :heavy_check_mark:    | :heavy_check_mark:    | 40 :hourglass: | 20 :hourglass: |          |
 | 201903 | :heavy_check_mark:    | :heavy_check_mark:    | 20 :x: | 80 :hourglass: | 0 :hourglass: |
 | 201812 | :heavy_check_mark:    | :heavy_check_mark:    | 80 :hourglass: | 60 :x: |          |
