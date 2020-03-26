@@ -20,7 +20,7 @@
 | 201509 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       |           |          |
 | 201503 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       |           |          |
 | 201412 | :heavy_check_mark:    | :heavy_check_mark:    | 0 :x: |           |          |
-| 201409 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       |           |          |
+| 201409 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       | 70 :hourglass: |          |
 | 201403 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       |           |          |
 | 201312 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       | :heavy_check_mark: |          |
 
