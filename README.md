@@ -1,6 +1,6 @@
 # CSP
 
-:x: 错误    :hourglass: 超时   :heavy_check_mark: 正确​
+:x: 错误    :hourglass: 超时   :heavy_check_mark: 正确 :warning: 运行时错误
 
 |        | 第一题 | 第二题 | 第三题    | 第四题    | 第五题   |
 | ------ | ------ | ------ | --------- | --------- | -------- |
@@ -16,7 +16,7 @@
 | 201612 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       |           |          |
 | 201609 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       |           |          |
 | 201604 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       |           |          |
-| 201512 | :heavy_check_mark:    | :heavy_check_mark:    | 90 :hourglass: |  |          |
+| 201512 | :heavy_check_mark:    | :heavy_check_mark:    | 90 :hourglass: | 50 :warning: |          |
 | 201509 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       | :heavy_check_mark: |          |
 | 201503 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       | :heavy_check_mark: |          |
 | 201412 | :heavy_check_mark:    | :heavy_check_mark:    | 0 :x: | :heavy_check_mark: |          |
