@@ -16,7 +16,7 @@
 | 201612 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       |           |          |
 | 201609 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       |           |          |
 | 201604 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       |           |          |
-| 201512 | :heavy_check_mark:    | :heavy_check_mark:    | 90 :hourglass: | 50 :warning: |          |
+| 201512 | :heavy_check_mark:    | :heavy_check_mark:    | 90 :hourglass: | :heavy_check_mark: |          |
 | 201509 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       | :heavy_check_mark: |          |
 | 201503 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       | :heavy_check_mark: |          |
 | 201412 | :heavy_check_mark:    | :heavy_check_mark:    | 0 :x: | :heavy_check_mark: |          |

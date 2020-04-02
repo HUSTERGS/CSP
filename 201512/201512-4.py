@@ -1,13 +1,10 @@
+# score 100
 from sys import stdin
-import sys
-
-sys.setrecursionlimit(1000000)
 
 n, m = [int(x) for x in stdin.readline().strip().split()]
 
 connections = {x: [] for x in range(1, n + 1)}
 
-paths = set()
 for _ in range(m):
     a, b = [int(x) for x in stdin.readline().strip().split()]
     connections[a].append(b)
@@ -23,30 +20,29 @@ for key, value in connections.items():
         exit(0)
 
 result = []
+stack = []
 
-visited = set()
+now = []  # 充当运行时存放参数的栈
 
 
+# Hierholzer算法,非递归版本
 def dfs(start):
-    visited.add(start)
-    result.append(start)
-    for dst in connections[start]:
-        if (dst, start) not in paths and (start, dst) not in paths:
-            paths.add((dst, start))
-            paths.add((start, dst))
-            if dfs(dst):
-                return True
-            else:
-                paths.remove((dst, start))
-                paths.remove((start, dst))
-    if len(visited) != n or len(result) != m + 1:
-        # 没有访问到所有的点
-        result.pop()
-        visited.remove(start)
-        return False
-    else:
-        # 到了最后一层
-        return True
+    now.append(start)
+    while True:
+        while len(connections[start]):
+            dst = connections[start].pop()
+            connections[dst].remove(start)
+            start = dst
+            now.append(start)
+        if len(connections[start]) == 0:
+            try:
+                result.append(now.pop())
+                if len(result) != m + 1:
+                    start = now[-1]
+            except:
+                return
+        if len(result) == m + 1:
+            return
 
 
 if len(start_point) > 2 or len(start_point) == 1:
@@ -58,9 +54,11 @@ if len(start_point) == 2 and (1 not in start_point):
     exit(0)
 
 for _, value in connections.items():
-    value.sort()
+    value.sort(reverse=True)
 
-if dfs(1):
-    print(" ".join([str(x) for x in result]))
+dfs(1)
+if len(result) == m + 1:
+    print(" ".join([str(x) for x in result[::-1]]))
 else:
     print(-1)
+    exit(0)
