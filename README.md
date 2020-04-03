@@ -12,7 +12,7 @@
 | 201803 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       |           |          |
 | 201712 | :heavy_check_mark:    | :heavy_check_mark:    | 10 :hourglass: |           |          |
 | 201709 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       | 75 :hourglass: | 30 :hourglass: |
-| 201703 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       |           |          |
+| 201703 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       | 80 :hourglass: |          |
 | 201612 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       |           |          |
 | 201609 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       |           |          |
 | 201604 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       |           |          |

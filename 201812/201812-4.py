@@ -1,7 +1,6 @@
 # score 100
 from sys import stdin
 import heapq
-from collections import defaultdict
 n, m, root = [int(stdin.readline().strip()) for _ in range(3)]
 
 V = {}
