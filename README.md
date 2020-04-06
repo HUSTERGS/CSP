@@ -14,7 +14,7 @@
 | 201709 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       | 75 :hourglass: | 30 :hourglass: |
 | 201703 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       | 80 :hourglass: |          |
 | 201612 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       |           |          |
-| 201609 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       |           |          |
+| 201609 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       | 0 :x: |          |
 | 201604 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       |           |          |
 | 201512 | :heavy_check_mark:    | :heavy_check_mark:    | 90 :hourglass: | :heavy_check_mark: |          |
 | 201509 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       | :heavy_check_mark: |          |
