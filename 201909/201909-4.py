@@ -1,5 +1,6 @@
 # score 20 超时
 from sys import stdin
+from heapq import nlargest
 m, n = [int(x) for x in stdin.readline().strip().split()]
 
 data = {t: {} for t in range(m)}
@@ -9,7 +10,6 @@ for _ in range(n):
     # 每一个类的对应的编号的分数
     for t in data.keys():
         data[t][Id] = score
-
 
 # op num
 for _ in range(int(stdin.readline().strip())):
@@ -29,41 +29,14 @@ for _ in range(int(stdin.readline().strip())):
         for t in data.keys():
             # 商品类型，商品编号，商品分数    三元组
             temp = [(t, Id, data[t][Id]) for Id in sorted(data[t].keys())]
-            # 先按照编号进行排序
-            # temp.sort(key=lambda x: x[1])
-            # 再按照分数进行排序
-            temp.sort(key=lambda x: x[2], reverse=True)
-            # 如果大于商品数量，则全部加入
-            if Kn[t] >= len(data[t].keys()):
-                candidate.extend(temp)
-            else:
-                candidate.extend(temp[:Kn[t]])
+            candidate.extend(nlargest(Kn[t], temp, key=lambda x: x[2]))
         # 由于在加入的时候已经针对编号进行了排序，并且排序是稳定的，加入的时候也是按照分类号从小到大排序的
-
-        if K < len(candidate):
-            candidate.sort(key=lambda x: x[2], reverse=True)
-            candidate = candidate[:K]
-        for t in range(m):
-            temp = [x[1] for x in candidate if x[0] == t]
-            if len(temp) == 0:
+        candidate = nlargest(K, candidate, key=lambda x: x[2])
+        result = [[] for _ in range(m)]
+        for item in candidate:
+            result[item[0]].append(item[1])
+        for item in result:
+            if len(item) == 0:
                 print(-1)
             else:
-                print(" ".join(str(x) for x in temp))
-
-
-'''
-2 3
-1 3
-2 2
-3 1
-8
-3 100 1 1
-1 0 4 3
-1 0 5 1
-3 10 2 2
-3 10 1 1
-2 0 1
-3 2 1 1
-3 1 1 1
-
-'''
+                print(" ".join(str(x) for x in item))
