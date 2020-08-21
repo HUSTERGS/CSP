@@ -29,12 +29,14 @@ def next_moves(r, c):
 
 queue = deque()
 queue.append((1, 1, 0))  # (r, c, time)
+visited = set()
 while True:
     r, c, t = queue.popleft()
     if (r, c) == (n, m):
         print(t)
         break
+    visited.add((r, c, t))
     options = next_moves(r, c)
     for opt in options:
-        if not in_danger(opt, t + 1):
+        if (*opt, t + 1) not in visited and not in_danger(opt, t + 1) :
             queue.append((*opt, t + 1))
