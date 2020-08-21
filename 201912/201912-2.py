@@ -1,4 +1,4 @@
-# score
+# score 100
 from sys import stdin
 n = int(stdin.readline())
 stations = set(tuple(int(x) for x in stdin.readline().split()) for _ in range(n))
