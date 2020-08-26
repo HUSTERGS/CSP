@@ -4,6 +4,7 @@
 
 |        | 第一题 | 第二题 | 第三题    | 第四题    | 第五题   |
 | ------ | ------ | ------ | --------- | --------- | -------- |
+| 202006 | :heavy_check_mark: | 60:hourglass: |  | 3​2:hourglass: |  |
 | 201912 | :heavy_check_mark:    | :heavy_check_mark:    | 90 :hourglass: |           | 20 :hourglass: |
 | 201909 | :heavy_check_mark:    | :heavy_check_mark:    | 40 :hourglass: | 20 :hourglass: |          |
 | 201903 | :heavy_check_mark:    | :heavy_check_mark:    | 20 :x: | 80 :hourglass: | 0 :hourglass: |
@@ -15,7 +16,7 @@
 | 201703 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       | 80 :hourglass: |          |
 | 201612 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       |           |          |
 | 201609 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       | 0 :x: |          |
-| 201604 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       |           |          |
+| 201604 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       | 10:hourglass: |          |
 | 201512 | :heavy_check_mark:    | :heavy_check_mark:    | 90 :hourglass: | :heavy_check_mark: |          |
 | 201509 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       | :heavy_check_mark: |          |
 | 201503 | :heavy_check_mark:    | :heavy_check_mark:    | :heavy_check_mark:       | :heavy_check_mark: |          |
