@@ -29,12 +29,12 @@ def match(url, target):
                     else:
                         return None
                 elif url[i] == "<str>":
-                    if re.match(r"[a-z0-9_\-.]+", target[i]):
+                    if re.match(r"[a-zA-Z0-9_\-.]+", target[i]):
                         params.append(target[i])
                     else:
                         return None
                 elif url[i] == "<path>":
-                    if re.match(r"[a-z0-9_\-./]+", "/".join(target[i:])):
+                    if re.match(r"[a-zA-Z0-9_\-./]+", "/".join(target[i:])):
                         params.append("/".join(target[i:]))
                         return params
                     return None
