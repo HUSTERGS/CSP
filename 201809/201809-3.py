@@ -1,4 +1,4 @@
-# score 90
+# score 100
 from sys import stdin
 
 n, m = [int(x) for x in stdin.readline().strip().split()]
@@ -40,7 +40,7 @@ def contain(element, selector):
     else:
         selector = selector.lower()
         for index, value in enumerate(element):
-            if value.split(" ")[0] == selector:
+            if value.split(" ")[0].lower() == selector:
                 return index
     return -1
 
@@ -69,3 +69,24 @@ for _ in range(m):
             result.append(index)
     print(len(result), end=" ")
     print(" ".join(str(x) for x in result))
+
+
+'''
+11 5
+html
+..head
+....title
+..body
+....h1
+....p #subtitle
+....div #main
+......h2
+......p #one
+......div
+........p #two
+p
+#subtitle
+h3
+div p
+div div p
+'''
