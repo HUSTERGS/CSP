@@ -2,6 +2,7 @@
 
 import sys
 
+
 def convert(q, s, n):
     # global s,n
     x, y = divmod(q, s)
@@ -9,19 +10,20 @@ def convert(q, s, n):
     # s 是条带大小
     # x 是 q 所在第几个条带
     # y 是 所在条带的第几个块
-    drive_number = x % n # 硬盘序号
-    addition = x // (n - 1) * s# 需要额外增加的块的个数
+    drive_number = x % n  # 硬盘序号
+    addition = x // (n - 1) * s  # 需要额外增加的块的个数
     return (drive_number, addition + y)
 
+
 def str2int(s):
-    return list(map(lambda x : eval('0x' + x),  [s[0:2], s[2:4], s[4:6], s[6:8]]))
+    return list(map(lambda x: eval('0x' + x), [s[0:2], s[2:4], s[4:6], s[6:8]]))
 
 
 n, s, l = [int(x) for x in sys.stdin.readline().split()]
 
 hard_drive = []
 
-able_recover = (l >= n-1)
+able_recover = (l >= n - 1)
 
 for i in range(l):
     index, content = sys.stdin.readline().split()
@@ -53,20 +55,15 @@ for i in range(q_number):
     else:
         # print('硬盘丢失')
         if able_recover:
-            contentlist = [x[1][index * 8 : index * 8 + 8] for x in hard_drive]
+            contentlist = [x[1][index * 8: index * 8 + 8] for x in hard_drive]
             a, b, c, d = list(zip(*[str2int(x) for x in contentlist]))
             a = eval(' ^ '.join([str(x) for x in a]))
             b = eval(' ^ '.join([str(x) for x in b]))
             c = eval(' ^ '.join([str(x) for x in c]))
             d = eval(' ^ '.join([str(x) for x in d]))
-            print(''.join([hex(x)[2:].upper() for x in [a, b, c, d]]))
+            print(''.join([f"{x:0{2}x}".upper() for x in [a, b, c, d]]))
         else:
             print('-')
-            
-
-
-
-
 
 # print(str2int('A0A1A2A3'))
 
@@ -89,4 +86,3 @@ test example 2
 1
 
 '''
-
