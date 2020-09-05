@@ -1,45 +1,50 @@
-from sys import stdin
-
-records = {}
-count = 1
-while True:
-    line = stdin.readline()
-    if not line:
-        break
-    if len(line.split()) == 2:
-        del records[int(line.split()[1])]
-        continue
-    records[count] = line.split()
-    # if count == 6:
-    #     break
-    count += 1
+# score 100
+# copied from https://github.com/soyan1999/ccf-csp-python/blob/master/14_12/14_12_3.py
+# 实在是不想写了
+import sys
 
 
-records_list = list(records.values())
-records_list.sort(key=lambda x: float(x[1]))
-index = 0
-p_0 = float(records_list[index][1])
-buy_total = sum([int(x[2]) for x in records_list if x[0] == "buy"])
-sell_total = 0
-if records_list[index][0] == "sell":
-    sell_total = int(records_list[index][2])
-best_transaction = min(buy_total, sell_total)
-highest_p = p_0
-while index < len(records_list) - 1:
-    i = index
-    while i >= 0 and float(records_list[i][1]) == p_0 and records_list[i][0] == "buy":
-        buy_total -= int(records_list[i][2])
-        i -= 1
-    index += 1
-    p_0 = float(records_list[index][1])
+def cancel(num, lines):
+    if lines[num][:6] != 'cancel':
+        lines[num][1] = not lines[num][1]
+    else:
+        cancel(int(lines[num][7:]) - 1, lines)
 
-    while index < len(records_list) and float(records_list[index][1]) == p_0:
-        if records_list[index][0] == "sell":
-            sell_total += int(records_list[index][2])
-        index += 1
-    index -= 1
-    if min(sell_total, buy_total) > best_transaction:
-        best_transaction = min(sell_total, buy_total)
-        highest_p = p_0
-print("%.2f" % (highest_p, ), best_transaction)
 
+lines = [[line.rstrip(), True] for line in sys.stdin]
+for line, _ in lines:
+    if line[:6] == 'cancel':
+        cancel(int(line[7:]) - 1, lines)
+buys = []
+sells = []
+prices = set()
+buy_count = sell_count = 0
+for line, enable in lines:
+    if enable:
+        li = line.split(' ')
+        if li[0] == 'buy':
+            buys.append((float(li[1]), int(li[2])))
+            buy_count += int(li[2])
+            prices.add(float(li[1]))
+        elif li[0] == 'sell':
+            sells.append((float(li[1]), int(li[2])))
+            prices.add(float(li[1]))
+buys.sort()
+sells.sort()
+prices = list(prices)
+prices.sort()
+buy_idx = sell_idx = 0
+best = 0
+best_price = 0
+for price in prices:
+    while buy_idx < len(buys) and buys[buy_idx][0] < price:
+        buy_count -= buys[buy_idx][1]
+        buy_idx += 1
+    while sell_idx < len(sells) and sells[sell_idx][0] <= price:
+        sell_count += sells[sell_idx][1]
+        sell_idx += 1
+    num = min(buy_count, sell_count)
+    if num >= best:
+        best = num
+        best_price = price
+print('%.2f %d' % (best_price, best))
