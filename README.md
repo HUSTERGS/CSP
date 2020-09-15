@@ -1,6 +1,6 @@
 # CSP
 
-一部分CCF-CSP 的拉跨代码 Python版本 持续更新?
+一部分CCF-CSP 的拉跨代码 Python版本 ~~持续更新?~~，考完了，不再更新，202009为考场版本，懒得整理了，考场上代码写的很乱
 
 
 
@@ -11,6 +11,7 @@
 
 |        | 第一题 | 第二题 | 第三题    | 第四题    | 第五题   |
 | ------ | ------ | ------ | --------- | --------- | -------- |
+| 202009 | :heavy_check_mark: | :heavy_check_mark: | 90:hourglass: | 3​5:x: |  |
 | 202006 | :heavy_check_mark: | 60:hourglass: |  | 3​2:hourglass: |  |
 | 201912 | :heavy_check_mark:    | :heavy_check_mark:    | 90 :hourglass: |           | 20 :hourglass: |
 | 201909 | :heavy_check_mark:    | :heavy_check_mark:    | 40 :hourglass: | 20 :hourglass: |          |

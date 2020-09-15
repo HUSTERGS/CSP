@@ -305,3 +305,4 @@ dmypy.json
 .vscode
 cpp
 .idea
+.DS_Store
